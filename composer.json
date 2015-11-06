@@ -1,0 +1,28 @@
+{
+    "name": "frostealth/yii2-relations-behavior",
+    "description": "Easy linking relationships one-to-many",
+    "keywords": ["yii2", "behavior", "relation", "one-to-many"],
+    "homepage": "https://github.com/frostealth/yii2-relations-behavior",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Kudinov",
+            "email": "frostealth@gmail.com",
+            "homepage": "http://frostealth.ru"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/frostealth/yii2-relations-behavior/issues?state=open"
+    },
+    "autoload": {
+        "psr-4": {
+            "frostealth\\yii2\\behaviors\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0"
+    }
+}
