@@ -200,7 +200,7 @@ class RelationBehavior extends Behavior
         $lenSuffix = strlen($this->rawSuffix);
 
         $hasSuffix = strlen($name) > $lenSuffix;
-        $hasSuffix = $hasSuffix && substr_compare($name, $this->rawSuffix, -$lenSuffix, $lenSuffix) == 0;
+        $hasSuffix = $hasSuffix && substr_compare($name, $this->rawSuffix, -$lenSuffix, $lenSuffix, true) == 0;
 
         return $hasSuffix && $this->isRelation($this->normalizeRelationName($name));
     }
