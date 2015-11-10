@@ -1,6 +1,6 @@
 {
     "name": "frostealth/yii2-relation-behavior",
-    "description": "Easy linking relationships one-to-many",
+    "description": "Easy linking and sync relationships one-to-many",
     "keywords": ["yii2", "behavior", "relation", "one-to-many"],
     "homepage": "https://github.com/frostealth/yii2-relation-behavior",
     "type": "yii2-extension",
@@ -23,6 +23,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "~2.0"
+        "yiisoft/yii2": "~2.0",
+        "frostealth/php-data-storage": "~2.0"
     }
 }
