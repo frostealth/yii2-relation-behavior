@@ -31,15 +31,15 @@ class SyncRelationBehavior extends Behavior
         $relationClass = $this->owner->getRelation($name)->modelClass;
 
         $current = $this->getLinkedIds($name);
-        $link = array_diff($current, $ids);
-        $unlink = array_diff($ids, $current);
+        $unlink = array_diff($current, $ids);
+        $link = array_diff($ids, $current);
 
-        $models = $relationClass::findAll($link);
+        $models = $relationClass::findAll($unlink);
         foreach ($models as $model) {
             $this->owner->unlink($name, $model, $delete);
         }
 
-        $models = $relationClass::findAll($unlink);
+        $models = $relationClass::findAll($link);
         foreach ($models as $model) {
             $this->owner->link($name, $model);
         }

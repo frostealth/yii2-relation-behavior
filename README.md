@@ -75,7 +75,7 @@ public function behaviors()
 ### Syncing
 
 You may also use the `sync` method to construct one-to-many associations. 
-The sync method accepts an array of IDs.
+The `sync` method accepts an array of IDs.
 
 ```php
 $model->sync('categories', [2, 5, 9]);
