@@ -5,9 +5,15 @@ Easy linking and sync relationships many-to-many.
 ## Installation
 
 Run the [Composer](http://getcomposer.org/download/) command to install the latest stable version:
+
 ```
 composer require frostealth/yii2-relation-behavior @stable
 ```
+
+## Behaviors
+
+* `SyncRelationBehavior`
+* `EasyRelationBehavior`
 
 ## Using the SyncRelationBehavior
 
@@ -38,8 +44,6 @@ The `EasyRelationBehavior` extends the `SyncRelationBehavior`.
 ### Attach the behavior to your model
 
 ```php
-// ...
-
 public function behaviors()
 {
     return [
@@ -57,8 +61,6 @@ public function rules()
         ['categoriesIds', 'each', 'rule' => ['integer', 'integerOnly' => true]],
     ];
 }
-
-// ...
 ```
 
 ### Just add your `$suffix` to the relation name and you will get associated ids

@@ -25,19 +25,19 @@ class SyncRelationBehavior extends Behavior
      */
     public function sync($name, array $ids, $delete = true)
     {
-        /** @var \yii\db\ActiveRecord $relationClass */
+        /** @var \yii\db\ActiveRecordInterface $relationClass */
         $relationClass = $this->owner->getRelation($name)->modelClass;
 
         $current = $this->getLinkedIds($name);
         $unlink = array_diff($current, $ids);
         $link = array_diff($ids, $current);
 
-        $models = $relationClass::findAll($unlink);
+        $models = !empty($unlink) ? $relationClass::findAll($unlink) : [];
         foreach ($models as $model) {
             $this->owner->unlink($name, $model, $delete);
         }
 
-        $models = $relationClass::findAll($link);
+        $models = !empty($link) ? $relationClass::findAll($link) : [];
         foreach ($models as $model) {
             $this->owner->link($name, $model);
         }

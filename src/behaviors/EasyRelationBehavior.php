@@ -51,7 +51,7 @@ class EasyRelationBehavior extends SyncRelationBehavior
     public function save()
     {
         foreach ($this->getChanged() as $relation) {
-            $this->sync($relation, $this->values->get($relation), true);
+            $this->sync($relation, $this->values->get($relation));
         }
     }
 
