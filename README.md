@@ -19,7 +19,7 @@ composer require frostealth/yii2-relation-behavior @stable
 
 ### SyncRelationBehavior
 
-#### Attach the behavior to your model.
+Attach the behavior to your model:
 
 ```php
 public function behaviors()
@@ -29,8 +29,6 @@ public function behaviors()
     ];
 }
 ```
-
-#### Sync
 
 Use the `sync` method to construct many-to-many associations. 
 The `sync` method accepts an array of IDs.
@@ -43,7 +41,7 @@ $model->sync('categories', [2, 5, 9]);
 
 The `EasyRelationBehavior` extends the `SyncRelationBehavior`.
 
-#### Attach the behavior to your model.
+Attach the behavior to your model:
 
 ```php
 public function behaviors()
@@ -65,7 +63,7 @@ public function rules()
 }
 ```
 
-#### Just add your `$suffix` to the relation name and you will get associated ids.
+Just add your `$suffix` to the relation name and you will get associated ids:
 
 ```php
 $categoriesIds = $model->categoriesIds; // [1, 3, 4]
@@ -76,7 +74,7 @@ $model->categoriesIds = $categoriesIds;
 $model->save();
 ```
 
-#### Add control to view for managing related list.
+Add control to view for managing related list.
 
 Without extensions it can be done with multiple select:
 
