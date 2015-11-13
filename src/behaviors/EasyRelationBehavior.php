@@ -51,20 +51,8 @@ class EasyRelationBehavior extends SyncRelationBehavior
     public function save()
     {
         foreach ($this->getChanged() as $relation) {
-            $delete = !empty($this->owner->getRelation($relation)->via);
-            $this->sync($relation, $this->values->get($relation), $delete);
+            $this->sync($relation, $this->values->get($relation), true);
         }
-    }
-
-    /**
-     * Remove values if the relationship has been manually synchronized
-     *
-     * @inheritDoc
-     */
-    protected function afterSync($name)
-    {
-        $this->values->remove($name);
-        $this->dropChanged($name);
     }
 
     /**
@@ -162,6 +150,17 @@ class EasyRelationBehavior extends SyncRelationBehavior
         }
 
         return parent::canSetProperty($name, $checkVars);
+    }
+
+    /**
+     * Remove values if the relationship has been manually synchronized
+     *
+     * @inheritDoc
+     */
+    protected function afterSync($name)
+    {
+        $this->values->remove($name);
+        $this->dropChanged($name);
     }
 
     /**

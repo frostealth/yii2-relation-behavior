@@ -1,12 +1,34 @@
 # Yii2 Relation Behavior
 
-Easy linking and sync relationships one-to-many.
+Easy linking and sync relationships many-to-many.
 
 ## Installation
 
 Run the [Composer](http://getcomposer.org/download/) command to install the latest stable version:
 ```
 composer require frostealth/yii2-relation-behavior @stable
+```
+
+## Using the SyncRelationBehavior
+
+### Attach the behavior to your model
+
+```php
+public function behaviors()
+{
+    return [
+        SyncRelationBehavior::className(),
+    ];
+}
+```
+
+### Sync
+
+Use the `sync` method to construct many-to-many associations. 
+The `sync` method accepts an array of IDs.
+
+```php
+$model->sync('categories', [2, 5, 9]);
 ```
 
 ## Using the EasyRelationBehavior
@@ -59,24 +81,7 @@ Without extensions it can be done with multiple select:
 <?= $form->field($model, 'categoriesIds')->dropDownList($categories, ['multiple' => true]) ?>
 ```
 
-## Using the SyncRelationBehavior
+## License
 
-### Attach the behavior to your model
-
-```php
-public function behaviors()
-{
-    return [
-        'syncRelationBehavior' => SyncRelationBehavior::className(),
-    ];
-}
-```
-
-### Syncing
-
-You may also use the `sync` method to construct one-to-many associations. 
-The `sync` method accepts an array of IDs.
-
-```php
-$model->sync('categories', [2, 5, 9]);
-```
+The MIT License (MIT).
+See [LICENSE.md](https://github.com/frostealth/yii2-relation-behavior/blob/master/LICENSE.md) for more information.

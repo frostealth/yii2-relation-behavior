@@ -14,8 +14,6 @@ use yii\helpers\ArrayHelper;
  */
 class SyncRelationBehavior extends Behavior
 {
-    const EVENT_AFTER_SYNC = 'afterSync';
-
     /**
      * Sync the relationship with a list of IDs
      *

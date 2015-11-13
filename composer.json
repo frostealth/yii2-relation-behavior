@@ -1,7 +1,7 @@
 {
     "name": "frostealth/yii2-relation-behavior",
-    "description": "Easy linking and sync relationships one-to-many",
-    "keywords": ["yii2", "behavior", "relation", "one-to-many"],
+    "description": "Easy linking and sync relationships many-to-many",
+    "keywords": ["yii2", "behavior", "relation", "many-to-many"],
     "homepage": "https://github.com/frostealth/yii2-relation-behavior",
     "type": "yii2-extension",
     "license": "MIT",
@@ -17,10 +17,9 @@
     },
     "autoload": {
         "psr-4": {
-            "frostealth\\yii2\\behaviors\\": "src/"
+            "frostealth\\yii2\\": "src/"
         }
     },
-    "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0",
