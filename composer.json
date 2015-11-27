@@ -1,14 +1,14 @@
 {
     "name": "frostealth/yii2-relation-behavior",
-    "description": "Easy linking and sync relationships many-to-many",
-    "keywords": ["yii2", "behavior", "relation", "many-to-many"],
+    "description": "Easy linking and sync relationships many-to-many and one-to-many",
+    "keywords": ["yii2", "behavior", "relation", "many-to-many", "one-to-many"],
     "homepage": "https://github.com/frostealth/yii2-relation-behavior",
     "type": "yii2-extension",
     "license": "MIT",
     "authors": [
         {
             "name": "Ivan Kudinov",
-            "email": "frostealth@gmail.com",
+            "email": "i.kudinov@frostealth.ru",
             "homepage": "http://frostealth.ru"
         }
     ],
