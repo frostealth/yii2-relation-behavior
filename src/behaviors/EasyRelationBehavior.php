@@ -33,6 +33,11 @@ class EasyRelationBehavior extends SyncRelationBehavior
      * @var array
      */
     private $_marked = [];
+    
+    /**
+     * @var bool
+     */
+    public $delete = true;
 
     /**
      * @inheritDoc
@@ -51,7 +56,7 @@ class EasyRelationBehavior extends SyncRelationBehavior
     public function save()
     {
         foreach ($this->getChanged() as $relation) {
-            $this->sync($relation, $this->values->get($relation));
+            $this->sync($relation, $this->values->get($relation), $this->delete);
         }
     }
 
